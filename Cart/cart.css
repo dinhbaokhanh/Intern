@@ -51,11 +51,11 @@ td, th {
     display: flex;
     align-items: center;
     gap: 20px;
-  }
+}
   
 .product_info img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
   
 .quantity_info span {
@@ -68,6 +68,6 @@ td, th {
     font-size: 20px;
     outline: none;
     border: none;
-    border-radius: 9999px;
     cursor: pointer;
 }
+

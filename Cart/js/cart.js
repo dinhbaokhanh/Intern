@@ -14,6 +14,7 @@ if (!localStorage.getItem('currentUser')) {
 
 const addToCart = (productId) => {
     console.log('added');
+    location.reload();
 
     const cart = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
@@ -79,7 +80,7 @@ const yourCart = () => {
                                 </div>
 
                             </td>
-                            <td>
+                            <td class="quantity_info">
                                 <button onclick="removeFromCart(${product.id});yourCart()">-</button>
                                 <span class="quantity_info">${product.quantity}</span>
                                 <button onclick="addToCart(${product.id});yourCart()">+</button>    
@@ -94,9 +95,9 @@ const yourCart = () => {
             </table>
             <div class="total">
                 <p>Total: ${
-                    cart.reduce((acc, product) => {
-                    acc += product.price * product.quantity;
-                    return acc;
+                    cart.reduce((total, product) => {
+                        total += product.price * product.quantity;
+                        return total;
                     }, 0)}
                 VNĐ </p>
             </div>
