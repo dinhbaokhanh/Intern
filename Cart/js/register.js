@@ -1,5 +1,5 @@
 if (localStorage.getItem("currentUser")) {
-    location.href = "../landscape.html";
+    location.href = "./index.html";
 }
   
 let form = document.querySelector("form");

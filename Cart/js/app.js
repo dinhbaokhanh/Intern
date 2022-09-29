@@ -1,5 +1,5 @@
 for (let product of products) {
-    let card = `
+  let card = `
     <div class="card">
         <div class="image-container">
             <img src="${product.image}" /> 
@@ -16,15 +16,15 @@ for (let product of products) {
   
     document.getElementById("products").innerHTML += card;
 }
-  
+
 const addProducts = (productId) => {
-    if (!localStorage.getItem("currentUser")) {
-        alert("Please log in");
-    } else {
-        addToCart(productId);
-    }
+  if (!localStorage.getItem("currentUser")) {
+    alert("Please log in");
+  } else {
+    addToCart(productId);
+  }
 };
-  
+
 const logout = () => {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("cart");

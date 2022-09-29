@@ -1,11 +1,13 @@
-if(localStorage.getItem('currentUser')) {
+if (localStorage.getItem('currentUser')) {
+    console.log('currentUser');
     document.querySelector('.exit').innerHTML += `
-        <a href="/cart/cart.html">
-            <i class='fa-solid fa-cart-shopping></i>
+        <a onclick='openCart()'>
+            <i class="fa-solid fa-shopping-cart"></i>
+            <span id="cart-count"></span>
         </a>
-        <a href="javascript:;" onclick="logout()">
+        <a onclick='logout()' href='javascript:;'>
             <i class="fa-solid fa-right-from-bracket"></i>
-        </a>    
+        </a>
     `;
 } else {
     document.querySelector('.exit').innerHTML += `
@@ -14,3 +16,12 @@ if(localStorage.getItem('currentUser')) {
         </a>
     `;
 }
+
+const cartCount = () => {
+    if (localStorage.getItem("cart")) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        document.getElementById("cart-count").innerText = cart.length;
+    }
+};
+
+cartCount();
