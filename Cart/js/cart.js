@@ -13,7 +13,6 @@ if (!localStorage.getItem('currentUser')) {
 }
 
 const addToCart = (productId) => {
-    console.log('added');
 
     const cart = localStorage.getItem("cart")
         ? JSON.parse(localStorage.getItem("cart"))
@@ -22,7 +21,7 @@ const addToCart = (productId) => {
     const existingItem = cart.find((item) => item.id === productId);
   
     if (existingItem) {
-      existingItem.quantity++;
+        existingItem.quantity++;
     } else {
         cart.push({
             ...products.find((product) => product.id === productId),
@@ -32,6 +31,7 @@ const addToCart = (productId) => {
   
     localStorage.setItem("cart", JSON.stringify(cart));
     cartCount();
+    location.reload();
 };
   
 const removeFromCart = (productId) => {
@@ -54,11 +54,12 @@ const removeFromCart = (productId) => {
 };
 
 const yourCart = () => {
-    const cart = localStorage.getItem("cart")
-        ? JSON.parse(localStorage.getItem("cart"))
-        : [];
 
-    if (cart.length == 0) {
+    const cart = localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+
+    if (cart.length === 0) {
         document.getElementById('cart-container').innerHTML = `
             <div>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><p style="text-align: center; font-size: 17px;"> Your cart is empty</p><br><br><br><br><br><br><br><br><br><br>
@@ -105,6 +106,9 @@ const yourCart = () => {
             </div>
         `;
     }
+
+    
+
 };
 
 yourCart();

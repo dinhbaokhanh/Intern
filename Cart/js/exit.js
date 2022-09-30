@@ -20,7 +20,7 @@ if (localStorage.getItem('currentUser')) {
 const cartCount = () => {
     if (localStorage.getItem("cart")) {
         let cart = JSON.parse(localStorage.getItem("cart"));
-        document.getElementById("cart-count").innerText = cart.length;
+        document.getElementById("cart-count").innerHTML = cart.length;
     }
 };
 
