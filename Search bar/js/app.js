@@ -9,7 +9,6 @@ for (let product of products) {
               <h5 class="name">${product.title}</h5> 
               <h6>${product.price} VNĐ</h6>
               </div>
-              <button onclick="addProducts(${product.id})">Add to cart</button>
           </div>
       </div>
       `;

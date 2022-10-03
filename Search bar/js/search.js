@@ -1,18 +1,19 @@
 function SearchEngine() {
-    // Lấy giá trị
+    // Lấy giá trị input
     var input, filter, card, name, i, txtValue;
-    input = document.getElementById('search-input');
+    input = document.getElementById('search-input')
     filter = input.value.toLowerCase();
-    items = document.getElementsByClassName('items');
-  
+    card = document.getElementsByClassName('card');
+
     // Ẩn div ko có trong search
     for (i = 0; i < card.length; i++) {
         name = card[i].getElementsByClassName('name')[0];
-        txtValue = name.textContent || name.innerText;
+        txtValue = name.innerText; // or name.innerHTNL
         if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            items[i].style.display = "";
+            card[i].style.display = "";
         } else {
-            items[i].style.display = "none";
+            card[i].style.display = "none";
         }
     }
+
 }
