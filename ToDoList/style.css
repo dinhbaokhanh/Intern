@@ -7,7 +7,7 @@
 
 body {
     height: 100%;
-    background-color:dodgerblue;
+    background-color: rgb(255, 191, 191);
 }
 
 h1 {
@@ -23,7 +23,6 @@ h1 {
     margin: auto;
     align-items: center;
     background-color: white;
-    border-radius: 10px;
 }
 
 #addTask {
@@ -36,7 +35,7 @@ h1 {
     height: 40px;
     font-size: 15px;
 
-    border: 1.5px solid black;
+    border: 1.5px solid #c00;
     padding: 12px;
     color: black;
     font-weight: 500px;
@@ -65,7 +64,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 1px solid #c00;
     cursor: pointer;
 }
 

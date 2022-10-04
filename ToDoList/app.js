@@ -21,3 +21,12 @@ document.querySelector('#addButton').onclick = function() {
 
     }
 }
+
+var list = document.querySelector('#tasks');
+list.addEventListener('click', function(event) {
+    console.log('clicked');
+    console.log(event.target.tagName);
+    if (event.target.tagName === 'SPAN') {
+        event.target.classList.toggle('done');
+    }
+});
